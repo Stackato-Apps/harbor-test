@@ -60,7 +60,7 @@ function createTCPServer(port) {
     var server = net.createServer(function(conn) {
         console.log("TCP connection from " + conn.remoteAddress + " on port " + conn.remotePort);
         conn.setEncoding("utf8");
-        var buffer = port + "";
+        var buffer = "";
 
         conn.on("data", function(data) {
             for (var i = 0; i <= data.length; i++) {
