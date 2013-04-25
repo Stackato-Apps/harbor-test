@@ -1,0 +1,15 @@
+name: harbor-test
+
+framework:
+  type: node
+
+mem: 128
+
+hooks:
+  pre-staging:
+    - npm cache clean
+
+services:
+  udp-harbor-test: harbor
+  both-harbor-test: harbor
+  harbor-test: harbor

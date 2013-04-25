@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  - if (locals.errors)
+    p #{errors}
+
+  - if (locals.message)
+    p #{message}
+
+  - if (locals.services)
+    - each service in services
+      - service = JSON.stringify(service);
+      p #{service}
