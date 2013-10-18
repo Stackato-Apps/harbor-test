@@ -41,7 +41,8 @@ function createUDPServer(port) {
             message,
             rinfo.address,
             rinfo.port);
-        server.send(message, 0, message.length, rinfo.port, rinfo.address);
+        var returnMsg = new Buffer('udp-test: ' + message.toString());
+        server.send(returnMsg, 0, returnMsg.length, rinfo.port, rinfo.address);
     });
 
     server.on('listening', function() {

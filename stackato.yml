@@ -1,8 +1,5 @@
 name: harbor-test
 
-framework:
-  type: node
-
 mem: 128
 
 hooks:
