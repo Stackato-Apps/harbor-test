@@ -50,7 +50,7 @@ function createUDPServer(port) {
     });
 
     server.on('error', function(err) {
-        console.log(err)
+        console.log(err);
     });
 
     server.bind(port);
@@ -80,20 +80,20 @@ function createTCPServer(port) {
 }
 
 if (!process.env.VCAP_APP_PORT) {
-    console.error("This app is not running a Stackato environment")
+    console.error("This app is not running a Stackato environment");
 } else {
     if (!process.env.STACKATO_SERVICES) {
-        console.error("No services are bound to this app")
+        console.error("No services are bound to this app");
     } else {
         services = JSON.parse(process.env.STACKATO_SERVICES);
-        for (s in services) {
+        for (var s in services) {
             if (s.lastIndexOf("udp", 0) === 0) {
                 createUDPServer(services[s].int_port);
             } else if (s.lastIndexOf("both", 0) === 0) {
                 createUDPServer(services[s].int_port);
                 createTCPServer(services[s].int_port);
             } else {
-                createTCPServer(services[s].int_port);
+                createTCPServer(services[s].credentials.container_port);
             }
         }
     }
