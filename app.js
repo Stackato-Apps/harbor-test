@@ -93,7 +93,7 @@ if (!process.env.VCAP_APP_PORT) {
                 createUDPServer(services[s].int_port);
                 createTCPServer(services[s].int_port);
             } else {
-                createTCPServer(services[s].credentials.container_port);
+                createTCPServer(services[s].int_port);
             }
         }
     }
