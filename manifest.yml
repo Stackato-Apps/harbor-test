@@ -1,6 +1,6 @@
 applications:
 - name: harbor-test
-  mem: 128
+  memory: 128
   services:
     udp-harbor-test:
       type: harbor
