@@ -6,7 +6,7 @@ exports.index = function(req, res) {
 
     if (!process.env.VCAP_APP_PORT) {
         res.render('index', {
-            error: "This app is not running a Stackato environment"
+            error: "This app is not running a HPE Helion Stackato environment"
         });
     } else {
 

@@ -80,7 +80,7 @@ function createTCPServer(port) {
 }
 
 if (!process.env.VCAP_APP_PORT) {
-    console.error("This app is not running a Stackato environment");
+    console.error("This app is not running a HPE Helion Stackato environment");
 } else {
     if (!process.env.STACKATO_SERVICES) {
         console.error("No services are bound to this app");
